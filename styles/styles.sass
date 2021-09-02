@@ -1,0 +1,98 @@
+// Variables
+$mobile-screen: 375px
+$desktop-screen: 1440px
+
+$main-background: hsl(233, 47%, 7%)
+$card-background: hsl(244, 38%, 16%)
+$accent: hsl(277, 64%, 63%)
+$accent-trans: hsla(277, 64%, 61%, .5)
+$white: hsl(0, 0%, 100%)
+$trans-white-p: hsla(0, 0%, 100%, 0.75)
+$trans-white-h: hsla(0, 0%, 100%, 0.6)
+$footer-link-color: hsl(228, 45%, 44%)
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap')
+$inter: 'Inter', sans-serif
+$lexend-deca: 'Lexend Deca', sans-serif
+$base-font-size: 15px
+
+body
+    background: $main-background
+    font-size: $base-font-size
+    color: $trans-white-p
+    font-family: $inter
+    padding: 4em 1em
+
+.stats-card
+    background: $card-background
+    text-align: center
+    border-radius: 10px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    max-width: 500px
+    margin: 0 auto
+    @media screen and (min-width: $desktop-screen)
+        max-width: 1000px
+        flex-direction: row-reverse
+        text-align: left
+
+.stats-image
+    background-image: linear-gradient($accent-trans, $accent-trans), url("../images/image-header-mobile.jpg")
+    background-position: center
+    background-size: cover
+    height: 16em
+    @media screen and (min-width: $desktop-screen)
+        background-image: linear-gradient($accent-trans, $accent-trans), url("../images/image-header-desktop.jpg")
+        height: auto
+        width: 100%
+        padding-left: 8em
+    
+
+.stats-text
+    padding: 2em
+    @media screen and (min-width: $desktop-screen)
+        padding: 4em 8em 4em 4em
+    h1
+        // font-family: $lexend-deca
+        font-size: 1.8em
+        color: $white
+        margin-top: 0
+        @media screen and (min-width: $desktop-screen)
+            font-size: 2.1em
+        span
+            color: $accent
+    p
+        line-height: 1.6
+
+.stats
+    display: flex
+    flex-direction: column
+    list-style-type: none
+    padding: 0
+    @media screen and (min-width: $desktop-screen)
+        flex-direction: row
+        justify-content: space-between
+        margin-bottom: 0
+        margin-top: 4em
+    li
+        font-family: $lexend-deca
+        text-transform: uppercase
+        font-size: .8em
+        line-height: 1.7
+        padding-bottom: 1em
+        letter-spacing: 1px
+        @media screen and (min-width: $desktop-screen)
+            padding-bottom: 0
+        span
+            font-family: $inter
+            font-weight: 700
+            display: block
+            font-size: 1.2rem
+            color: $white
+.attribution
+    font-size: .7rem
+    text-align: center
+    margin-top: 2em
+    a
+        color: $accent
