@@ -140,5 +140,11 @@ h1 {
 .attribution a {
   color: #af64dd;
 }
+.attribution a:hover {
+  text-decoration: none;
+}
+.attribution a:focus {
+  outline: 1px solid #af64dd;
+}
 
 /*# sourceMappingURL=styles.css.map */
