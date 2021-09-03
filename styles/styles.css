@@ -15,7 +15,12 @@ body {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.75);
   min-height: 100vh;
-  padding: 4em 2em;
+  padding: 2em 1em;
+}
+@media screen and (min-width: 900px) {
+  body {
+    padding: 4em 2em;
+  }
 }
 
 h1 {
@@ -125,7 +130,12 @@ h1 {
 .attribution {
   font-size: 0.7rem;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 900px) {
+  .attribution {
+    margin-top: 4rem;
+  }
 }
 .attribution a {
   color: #af64dd;

@@ -29,7 +29,9 @@ body
     font-size: $base-font-size
     color: $trans-white-p
     min-height: 100vh
-    padding: 4em 2em
+    padding: 2em 1em
+    @media screen and (min-width: $desktop-screen)
+        padding: 4em 2em
 
 h1
     text-align: center
@@ -107,6 +109,8 @@ h1
 .attribution
     font-size: .7rem
     text-align: center
-    margin-top: 4rem
+    margin-top: 2rem
+    @media screen and (min-width: $desktop-screen)
+        margin-top: 4rem
     a
         color: $accent
