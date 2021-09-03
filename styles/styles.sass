@@ -1,11 +1,10 @@
 // Variables
 $mobile-screen: 375px
-$desktop-screen: 1440px
+$desktop-screen: 900px
 
 $main-background: hsl(233, 47%, 7%)
 $card-background: hsl(244, 38%, 16%)
 $accent: hsl(277, 64%, 63%)
-$accent-trans: hsla(277, 64%, 61%, .5)
 $white: hsl(0, 0%, 100%)
 $trans-white-p: hsla(0, 0%, 100%, 0.75)
 $trans-white-h: hsla(0, 0%, 100%, 0.6)
@@ -16,44 +15,59 @@ $inter: 'Inter', sans-serif
 $lexend-deca: 'Lexend Deca', sans-serif
 $base-font-size: 15px
 
+*
+    box-sizing: border-box
+    &::before, &::after
+        box-sizing: inherit
+
 body
+    display: flex
+    flex-direction: column
+    align-items: center
     background: $main-background
+    font-family: $inter
     font-size: $base-font-size
     color: $trans-white-p
-    font-family: $inter
-    padding: 4em 1em
+    min-height: 100vh
+    padding: 4em 2em
+
+h1
+    text-align: center
+    margin-bottom: 2em
+    @media screen and (min-width: $desktop-screen)
+        margin-bottom: 3em
 
 .stats-card
+    display: grid
     background: $card-background
     text-align: center
     border-radius: 10px
     overflow: hidden
-    display: flex
-    flex-direction: column
     max-width: 500px
     margin: 0 auto
     @media screen and (min-width: $desktop-screen)
-        max-width: 1000px
-        flex-direction: row-reverse
+        grid-template-columns: 1fr 1fr
         text-align: left
+        text-align: left
+        max-width: 1000px
 
 .stats-image
-    background-image: linear-gradient($accent-trans, $accent-trans), url("../images/image-header-mobile.jpg")
+    background-color: $accent
+    background-image: url("../images/image-header-mobile.jpg")
+    background-blend-mode: luminosity
     background-position: center
     background-size: cover
     height: 16em
     @media screen and (min-width: $desktop-screen)
-        background-image: linear-gradient($accent-trans, $accent-trans), url("../images/image-header-desktop.jpg")
+        order: 2
+        background-image: url("../images/image-header-desktop.jpg")
         height: auto
-        width: 100%
-        padding-left: 8em
-    
 
 .stats-text
     padding: 2em
     @media screen and (min-width: $desktop-screen)
-        padding: 4em 8em 4em 4em
-    h1
+        padding: 4em
+    h2
         // font-family: $lexend-deca
         font-size: 1.8em
         color: $white
@@ -77,22 +91,22 @@ body
         margin-top: 4em
     li
         font-family: $lexend-deca
-        text-transform: uppercase
         font-size: .8em
         line-height: 1.7
+        text-transform: uppercase
         padding-bottom: 1em
         letter-spacing: 1px
         @media screen and (min-width: $desktop-screen)
             padding-bottom: 0
         span
+            display: block
             font-family: $inter
             font-weight: 700
-            display: block
             font-size: 1.2rem
             color: $white
 .attribution
     font-size: .7rem
     text-align: center
-    margin-top: 2em
+    margin-top: 4rem
     a
         color: $accent
